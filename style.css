@@ -292,3 +292,184 @@ transition:.3s;
 background:var(--secondary);
 
 }
+/* ======================================
+   Newsletter
+====================================== */
+
+.newsletter{
+
+padding:80px 20px;
+text-align:center;
+background:#111827;
+margin-top:60px;
+
+}
+
+.newsletter h2{
+
+font-size:36px;
+margin-bottom:15px;
+
+}
+
+.newsletter p{
+
+color:var(--gray);
+margin-bottom:30px;
+
+}
+
+.newsletter form{
+
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+
+}
+
+.newsletter input{
+
+width:320px;
+padding:15px 20px;
+border-radius:10px;
+border:1px solid var(--border);
+background:var(--card);
+color:white;
+font-size:16px;
+outline:none;
+
+}
+
+.newsletter button{
+
+padding:15px 28px;
+border:none;
+border-radius:10px;
+background:var(--primary);
+color:white;
+font-weight:600;
+transition:.3s;
+
+}
+
+.newsletter button:hover{
+
+background:var(--secondary);
+
+}
+
+/* ======================================
+   Footer
+====================================== */
+
+footer{
+
+background:#020617;
+padding:60px 20px 25px;
+margin-top:80px;
+
+}
+
+.footer-container{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:40px;
+
+}
+
+footer h3,
+footer h4{
+
+margin-bottom:15px;
+
+}
+
+footer p{
+
+color:var(--gray);
+
+}
+
+footer ul{
+
+list-style:none;
+
+}
+
+footer li{
+
+margin-bottom:10px;
+
+}
+
+footer a{
+
+color:var(--gray);
+text-decoration:none;
+transition:.3s;
+
+}
+
+footer a:hover{
+
+color:white;
+
+}
+
+.copyright{
+
+text-align:center;
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid var(--border);
+color:var(--gray);
+
+}
+
+/* ======================================
+   Responsive
+====================================== */
+
+@media(max-width:768px){
+
+header .container{
+
+flex-direction:column;
+gap:20px;
+
+}
+
+nav{
+
+flex-wrap:wrap;
+justify-content:center;
+
+}
+
+.hero h2{
+
+font-size:34px;
+
+}
+
+.section-title{
+
+font-size:28px;
+
+}
+
+.newsletter input{
+
+width:100%;
+
+}
+
+.newsletter button{
+
+width:100%;
+
+}
+
+   }
