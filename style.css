@@ -158,3 +158,137 @@ cursor:pointer;
 font-family:'Poppins',sans-serif;
 
 }
+/* ======================================
+   Categories
+====================================== */
+
+.section-title{
+text-align:center;
+font-size:36px;
+margin:70px 0 40px;
+font-weight:700;
+}
+
+.categories{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+margin-bottom:60px;
+}
+
+.category-btn{
+
+background:var(--card);
+color:white;
+border:1px solid var(--border);
+padding:12px 25px;
+border-radius:50px;
+font-size:15px;
+transition:.3s;
+
+}
+
+.category-btn:hover{
+
+background:var(--primary);
+
+}
+
+.category-btn.active{
+
+background:var(--primary);
+
+}
+
+/* ======================================
+   Tools Grid
+====================================== */
+
+.tools-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+margin-bottom:80px;
+
+}
+
+/* ======================================
+   Tool Card
+====================================== */
+
+.tool-card{
+
+background:var(--card);
+border:1px solid var(--border);
+border-radius:18px;
+padding:25px;
+transition:.35s;
+display:flex;
+flex-direction:column;
+
+}
+
+.tool-card:hover{
+
+transform:translateY(-8px);
+box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+
+.tool-image{
+
+width:70px;
+height:70px;
+border-radius:18px;
+object-fit:cover;
+margin-bottom:20px;
+
+}
+
+.tool-card h3{
+
+font-size:24px;
+margin-bottom:10px;
+
+}
+
+.tool-card p{
+
+color:var(--gray);
+margin-bottom:20px;
+flex:1;
+
+}
+
+.tool-category{
+
+display:inline-block;
+background:rgba(79,70,229,.2);
+color:#A5B4FC;
+padding:6px 14px;
+border-radius:30px;
+font-size:13px;
+margin-bottom:18px;
+
+}
+
+.tool-link{
+
+display:inline-block;
+text-decoration:none;
+background:var(--primary);
+color:white;
+padding:12px 20px;
+border-radius:10px;
+font-weight:600;
+transition:.3s;
+
+}
+
+.tool-link:hover{
+
+background:var(--secondary);
+
+}
