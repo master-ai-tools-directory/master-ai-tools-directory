@@ -14,7 +14,13 @@ const toolsGrid = document.getElementById("toolsGrid");
 
 async function loadTools() {
   toolsGrid.innerHTML = "";
-
+try {
+  const querySnapshot = await getDocs(collection(db, "Tool"));
+  console.log(querySnapshot.size);
+} catch (error) {
+  alert(error.message);
+  console.error(error);
+}
   const querySnapshot = await getDocs(collection(db, "Tool"));
 
   querySnapshot.forEach((doc) => {
