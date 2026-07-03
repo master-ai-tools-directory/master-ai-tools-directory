@@ -1,1 +1,160 @@
-/* AI Tools Directory */
+/* ======================================
+   AIForge Master CSS
+   Part 1
+====================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+:root{
+
+--primary:#4F46E5;
+--secondary:#7C3AED;
+--background:#0F172A;
+--card:#1E293B;
+--text:#F8FAFC;
+--gray:#CBD5E1;
+--border:#334155;
+--success:#10B981;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+background:var(--background);
+color:var(--text);
+line-height:1.7;
+
+}
+
+.container{
+
+width:90%;
+max-width:1300px;
+margin:auto;
+
+}
+
+/* ================= HEADER ================= */
+
+header{
+
+background:#111827;
+border-bottom:1px solid var(--border);
+position:sticky;
+top:0;
+z-index:999;
+
+}
+
+header .container{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+
+}
+
+.logo{
+
+font-size:28px;
+font-weight:700;
+color:white;
+
+}
+
+.logo span{
+
+color:var(--primary);
+
+}
+
+nav{
+
+display:flex;
+gap:30px;
+
+}
+
+nav a{
+
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:var(--primary);
+
+}
+
+/* ================= HERO ================= */
+
+.hero{
+
+padding:90px 0;
+text-align:center;
+
+}
+
+.hero h2{
+
+font-size:52px;
+margin-bottom:20px;
+font-weight:700;
+
+}
+
+.hero p{
+
+max-width:700px;
+margin:auto;
+color:var(--gray);
+font-size:18px;
+
+}
+
+#searchBox{
+
+width:100%;
+max-width:650px;
+margin-top:40px;
+padding:18px 25px;
+border:none;
+outline:none;
+border-radius:50px;
+background:#1E293B;
+color:white;
+font-size:17px;
+border:1px solid var(--border);
+
+}
+
+#searchBox:focus{
+
+border-color:var(--primary);
+
+}
+
+/* ================= BUTTON ================= */
+
+button{
+
+cursor:pointer;
+font-family:'Poppins',sans-serif;
+
+}
