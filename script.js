@@ -9,7 +9,7 @@ import { firebaseConfig } from "./firebase.js";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
+console.log("Firebase Connected");
 const toolsGrid = document.getElementById("toolsGrid");
 
 async function loadTools() {
@@ -30,5 +30,5 @@ async function loadTools() {
     `;
   });
 }
-
+console.log("Loading Tools...");
 loadTools();
