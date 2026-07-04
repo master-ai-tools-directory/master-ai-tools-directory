@@ -7,16 +7,23 @@ import {
 
 import { firebaseConfig } from "./firebase.js";
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-async function loadTools() {
-  try {
-    const snapshot = await getDocs(collection(db, "tools"));
-    alert("Documents found: " + snapshot.size);
-  } catch (e) {
-    alert("Firebase Error:\n" + e.message);
+try {
+  const app = initializeApp(firebaseConfig);
+  console.log("✅ Firebase initialized successfully");
+  
+  const db = getFirestore(app);
+  console.log("✅ Firestore connected");
+  
+  async function loadTools() {
+    try {
+      const snapshot = await getDocs(collection(db, "Tool"));
+      alert("✅ Documents found: " + snapshot.size);
+    } catch (e) {
+      alert("❌ Error loading documents:\n" + e.message);
+    }
   }
+  
+  loadTools();
+} catch (e) {
+  alert("❌ Firebase initialization failed:\n" + e.message);
 }
-
-loadTools();
