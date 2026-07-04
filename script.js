@@ -5,23 +5,13 @@ import { firebaseConfig } from "./firebase.js";
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-async function testCollections() {
+async function loadTools() {
   try {
-    // Test 1: "Tool" (Capital T)
-    const snap1 = await getDocs(collection(db, "Tool"));
-    alert("🔵 'Tool' → " + snap1.size + " documents");
-    
-    // Test 2: "tools" (small t)
-    const snap2 = await getDocs(collection(db, "tools"));
-    alert("🟢 'tools' → " + snap2.size + " documents");
-    
-    // Test 3: "tool" (small t)
-    const snap3 = await getDocs(collection(db, "tool"));
-    alert("🟡 'tool' → " + snap3.size + " documents");
-    
+    const snapshot = await getDocs(collection(db, "Tool"));
+    alert("✅ Documents found: " + snapshot.size);
   } catch (e) {
     alert("❌ Error: " + e.message);
   }
 }
 
-testCollections();
+loadTools();
