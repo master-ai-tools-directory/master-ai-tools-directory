@@ -12,7 +12,7 @@ const db = getFirestore(app);
 
 async function loadTools() {
   try {
-    const snapshot = await getDocs(collection(db, "Tool"));
+    const snapshot = await getDocs(collection(db, "tools"));
     alert("Documents found: " + snapshot.size);
   } catch (e) {
     alert("Firebase Error:\n" + e.message);
