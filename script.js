@@ -5,6 +5,7 @@ import { firebaseConfig } from "./firebase.js";
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// ========== LOAD TOOLS FROM FIREBASE ==========
 async function loadTools() {
   try {
     const snapshot = await getDocs(collection(db, "Tool "));
@@ -53,22 +54,7 @@ async function loadTools() {
   }
 }
 
-loadTools();
-// Category Filtering
-const categoryBtns = document.querySelectorAll('.category-btn');
-const searchBox = document.getElementById('searchBox');
-
-categoryBtns.forEach(btn => {
-  btn.addEventListener('click', function() {
-    // Active کلاس ہٹائیں
-    categoryBtns.forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
-    
-    const category = this.dataset.category;
-    filterTools(category);
-  });
-});
-
+// ========== CATEGORY FILTERING ==========
 function filterTools(category) {
   const cards = document.querySelectorAll('.tool-card');
   cards.forEach(card => {
@@ -80,19 +66,43 @@ function filterTools(category) {
     }
   });
 }
-// Search Functionality
-searchBox.addEventListener('input', function() {
-  const query = this.value.toLowerCase();
+
+// ========== SEARCH FUNCTIONALITY ==========
+function searchTools(query) {
   const cards = document.querySelectorAll('.tool-card');
+  const searchTerm = query.toLowerCase().trim();
   
   cards.forEach(card => {
     const name = card.querySelector('h3')?.textContent?.toLowerCase() || '';
     const desc = card.querySelector('p')?.textContent?.toLowerCase() || '';
+    const category = card.querySelector('.category')?.textContent?.toLowerCase() || '';
     
-    if (name.includes(query) || desc.includes(query)) {
+    if (searchTerm === '' || name.includes(searchTerm) || desc.includes(searchTerm) || category.includes(searchTerm)) {
       card.style.display = 'block';
     } else {
       card.style.display = 'none';
     }
   });
+}
+
+// ========== EVENT LISTENERS ==========
+// Category Buttons
+const categoryBtns = document.querySelectorAll('.category-btn');
+categoryBtns.forEach(btn => {
+  btn.addEventListener('click', function() {
+    categoryBtns.forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    filterTools(this.dataset.category);
+  });
 });
+
+// Search Box
+const searchBox = document.getElementById('searchBox');
+if (searchBox) {
+  searchBox.addEventListener('input', function() {
+    searchTools(this.value);
+  });
+}
+
+// ========== INITIALIZE ==========
+loadTools();
