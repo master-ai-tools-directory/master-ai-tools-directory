@@ -42,6 +42,11 @@ async function loadTools() {
     });
     
     toolsGrid.innerHTML = html;
+    // Update total tools count
+const totalToolsSpan = document.getElementById('totalTools');
+if (totalToolsSpan) {
+  totalToolsSpan.textContent = snapshot.size + '+';
+  }
     console.log(`✅ Loaded ${snapshot.size} tools`);
     
   } catch (e) {
