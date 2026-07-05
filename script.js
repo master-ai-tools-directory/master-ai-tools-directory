@@ -7,10 +7,44 @@ const db = getFirestore(app);
 
 async function loadTools() {
   try {
-  const snapshot = await getDocs(collection(db, "Tool "));
-    alert("✅ Documents found: " + snapshot.size);
+    const snapshot = await getDocs(collection(db, "Tool "));
+    const toolsGrid = document.getElementById("toolsGrid");
+    
+    if (!toolsGrid) {
+      console.error("toolsGrid element not found!");
+      return;
+    }
+    
+    if (snapshot.empty) {
+      toolsGrid.innerHTML = `<p style="text-align:center;color:#aaa;padding:40px;">No tools found.</p>`;
+      return;
+    }
+    
+    let html = "";
+    snapshot.forEach((doc) => {
+      const tool = doc.data();
+      html += `
+        <div class="tool-card">
+          <img src="${tool.image || 'https://via.placeholder.com/150'}" alt="${tool.name || 'Tool'}">
+          <h3>${tool.name || 'Unnamed Tool'}</h3>
+          <p>${tool.description || 'No description available'}</p>
+          <span class="category">${tool.category || 'Uncategorized'}</span>
+          <span class="rating">⭐ ${tool.rating || 'N/A'}</span>
+          <button class="try-btn">Try Now</button>
+        </div>
+      `;
+    });
+    
+    toolsGrid.innerHTML = html;
+    console.log(`✅ Loaded ${snapshot.size} tools`);
+    
   } catch (e) {
-    alert("❌ Error: " + e.message);
+    console.error("Error loading tools:", e);
+    document.getElementById("toolsGrid").innerHTML = `
+      <p style="text-align:center;color:#ff6b6b;padding:40px;">
+        ❌ Error loading tools: ${e.message}
+      </p>
+    `;
   }
 }
 
