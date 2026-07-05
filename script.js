@@ -36,7 +36,7 @@ async function loadTools() {
           <p>${tool.description || 'No description available'}</p>
           <span class="category">${tool.category || 'Uncategorized'}</span>
           <span class="rating">⭐ ${tool.rating || 'N/A'}</span>
-          <button class="try-btn">Try Now</button>
+          <a href="${tool.website || '#'}" target="_blank" class="try-btn">Try Now</a>
         </div>
       `;
     });
