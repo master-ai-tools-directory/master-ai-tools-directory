@@ -22,11 +22,12 @@ async function loadTools() {
     
     let html = "";
     let seenTools = new Set();
+    
     snapshot.forEach((doc) => {
-  const tool = doc.data();
-  if (seenTools.has(tool.name)) return; // ڈپلیکیٹ کو نظر انداز کریں
-  seenTools.add(tool.name);
       const tool = doc.data();
+      if (seenTools.has(tool.name)) return;
+      seenTools.add(tool.name);
+      
       html += `
         <div class="tool-card">
           <img src="${tool.image || 'https://via.placeholder.com/150'}" alt="${tool.name || 'Tool'}">
