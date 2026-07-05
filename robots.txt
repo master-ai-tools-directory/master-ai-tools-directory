@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://master-ai-tools-directory.github.io/master-ai-tools-directory/sitemap.xml
