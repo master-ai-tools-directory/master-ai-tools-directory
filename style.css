@@ -473,3 +473,131 @@ width:100%;
 }
 
    }
+/* ===== TOOL CARDS IMPROVEMENTS ===== */
+.tool-card {
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #334155;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tool-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.15);
+  border-color: #3b82f6;
+}
+
+.tool-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  border: 2px solid #334155;
+  transition: border-color 0.3s ease;
+}
+
+.tool-card:hover img {
+  border-color: #3b82f6;
+}
+
+.tool-card h3 {
+  color: #f1f5f9;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 12px 0 8px;
+}
+
+.tool-card p {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 8px 0 12px;
+}
+
+.tool-card .category {
+  display: inline-block;
+  background: #3b82f6;
+  color: #fff;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 4px 4px 8px 0;
+}
+
+.tool-card .rating {
+  display: inline-block;
+  color: #fbbf24;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.try-btn {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.try-btn:hover {
+  background: #2563eb;
+  transform: scale(1.02);
+}
+
+/* ===== CATEGORY BUTTONS ===== */
+.category-btn {
+  background: #1e293b;
+  color: #94a3b8;
+  border: 1px solid #334155;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.category-btn:hover {
+  background: #334155;
+  color: #f1f5f9;
+}
+
+.category-btn.active {
+  background: #3b82f6;
+  color: #fff;
+  border-color: #3b82f6;
+}
+
+/* ===== SEARCH BOX ===== */
+#searchBox {
+  width: 100%;
+  max-width: 500px;
+  padding: 14px 20px;
+  border-radius: 30px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #f1f5f9;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+#searchBox:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+#searchBox::placeholder {
+  color: #64748b;
+}
