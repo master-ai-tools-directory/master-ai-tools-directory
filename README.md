@@ -1,16 +1,27 @@
-## Hi there 👋
+# 🤖 AI Tools Directory
 
-<!--
-**master-ai-tools-directory/master-ai-tools-directory** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+A modern, responsive web application that showcases AI tools with Firebase backend.
 
-Here are some ideas to get you started:
+## ✨ Features
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- 🔍 Search and filter AI tools by category
+- 📱 Fully responsive design
+- 🎨 Modern dark theme with premium UI
+- 🔥 Firebase Firestore integration
+- ⚡ Fast loading and smooth animations
+- 📧 Newsletter subscription
+- 🔗 Direct links to AI tools
+
+## 🛠️ Technologies Used
+
+- HTML5, CSS3, JavaScript (Vanilla)
+- Firebase Firestore
+- Font Awesome Icons, Google Fonts
+
+## 🚀 Live Demo
+
+[View Live Website](https://master-ai-tools-directory.github.io/master-ai-tools-directory/)
+
+## 📝 License
+
+© 2026 AIForge. All Rights Reserved.
