@@ -601,3 +601,30 @@ width:100%;
 #searchBox::placeholder {
   color: #64748b;
 }
+/* ===== STATISTICS SECTION ===== */
+.stats {
+  background: #0f172a;
+  padding: 40px 0;
+  border-top: 1px solid #1e293b;
+  border-bottom: 1px solid #1e293b;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+
+.stat-item h3 {
+  color: #3b82f6;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.stat-item p {
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 400;
+}
