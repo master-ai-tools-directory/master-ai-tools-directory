@@ -54,3 +54,29 @@ async function loadTools() {
 }
 
 loadTools();
+// Category Filtering
+const categoryBtns = document.querySelectorAll('.category-btn');
+const searchBox = document.getElementById('searchBox');
+
+categoryBtns.forEach(btn => {
+  btn.addEventListener('click', function() {
+    // Active کلاس ہٹائیں
+    categoryBtns.forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    
+    const category = this.dataset.category;
+    filterTools(category);
+  });
+});
+
+function filterTools(category) {
+  const cards = document.querySelectorAll('.tool-card');
+  cards.forEach(card => {
+    const cardCategory = card.querySelector('.category')?.textContent || '';
+    if (category === 'all' || cardCategory === category) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
