@@ -111,3 +111,20 @@ if (searchBox) {
 
 // ========== INITIALIZE ==========
 loadTools();
+// ========== NEWSLETTER SUBSCRIPTION ==========
+const newsletterForm = document.getElementById('newsletterForm');
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('newsletterEmail').value;
+    if (email) {
+      const message = document.getElementById('newsletterMessage');
+      message.style.display = 'block';
+      message.textContent = `✅ Thank you ${email} for subscribing!`;
+      this.reset();
+      setTimeout(() => {
+        message.style.display = 'none';
+      }, 5000);
+    }
+  });
+}
