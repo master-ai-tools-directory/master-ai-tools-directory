@@ -80,3 +80,19 @@ function filterTools(category) {
     }
   });
 }
+// Search Functionality
+searchBox.addEventListener('input', function() {
+  const query = this.value.toLowerCase();
+  const cards = document.querySelectorAll('.tool-card');
+  
+  cards.forEach(card => {
+    const name = card.querySelector('h3')?.textContent?.toLowerCase() || '';
+    const desc = card.querySelector('p')?.textContent?.toLowerCase() || '';
+    
+    if (name.includes(query) || desc.includes(query)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+});
