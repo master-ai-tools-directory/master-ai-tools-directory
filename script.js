@@ -128,3 +128,46 @@ if (newsletterForm) {
     }
   });
 }
+// ========== TYPED TEXT ANIMATION ==========
+const typedTexts = [
+  "For Writing ✍️",
+  "For Coding 💻",
+  "For Images 🎨",
+  "For Video 🎬",
+  "For Marketing 📈",
+  "For Productivity ⚡"
+];
+
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typedElement = document.getElementById('typed-text');
+
+function typeEffect() {
+  const currentText = typedTexts[textIndex];
+  
+  if (isDeleting) {
+    typedElement.textContent = currentText.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typedElement.textContent = currentText.substring(0, charIndex + 1);
+    charIndex++;
+  }
+  
+  let speed = isDeleting ? 50 : 100;
+  
+  if (!isDeleting && charIndex === currentText.length) {
+    speed = 2000;
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    textIndex = (textIndex + 1) % typedTexts.length;
+    speed = 500;
+  }
+  
+  setTimeout(typeEffect, speed);
+}
+
+if (typedElement) {
+  typeEffect();
+}
