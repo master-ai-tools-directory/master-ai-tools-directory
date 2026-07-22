@@ -171,3 +171,37 @@ function typeEffect() {
 if (typedElement) {
   typeEffect();
 }
+// ========== NEWSLETTER FORM SUBMISSION ==========
+const newsletterForm = document.getElementById('newsletterForm');
+const newsletterEmail = document.getElementById('newsletterEmail');
+const newsletterMessage = document.getElementById('newsletterMessage');
+
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const email = newsletterEmail.value.trim();
+    
+    if (email) {
+      // Store email in localStorage
+      let subscribers = JSON.parse(localStorage.getItem('subscribers')) || [];
+      if (!subscribers.includes(email)) {
+        subscribers.push(email);
+        localStorage.setItem('subscribers', JSON.stringify(subscribers));
+      }
+      
+      // Show success message
+      newsletterMessage.style.display = 'block';
+      newsletterMessage.textContent = '✅ Thank you for subscribing! You will receive updates.';
+      newsletterEmail.value = '';
+      
+      // Hide message after 5 seconds
+      setTimeout(() => {
+        newsletterMessage.style.display = 'none';
+      }, 5000);
+      
+      // Log subscribers count
+      console.log('📧 Total Subscribers:', subscribers.length);
+    }
+  });
+}
