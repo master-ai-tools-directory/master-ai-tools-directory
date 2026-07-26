@@ -7,10 +7,7 @@ const db = getFirestore(app);
 
 async function loadTools() {
   try {
-    // Test: "Tool" (بڑے T کے ساتھ)
-    const snapshot = await getDocs(collection(db, "Tool"));
-    alert("✅ Documents found: " + snapshot.size);
-    
+    const snapshot = await getDocs(collection(db, "Tool "));
     const toolsGrid = document.getElementById("toolsGrid");
     
     if (!toolsGrid) {
@@ -19,18 +16,13 @@ async function loadTools() {
     }
     
     if (snapshot.empty) {
-      toolsGrid.innerHTML = `<p style="text-align:center;color:#aaa;padding:40px;">No tools found. Please add data to Firestore.</p>`;
+      toolsGrid.innerHTML = `<p style="text-align:center;color:#aaa;padding:40px;">No tools found.</p>`;
       return;
     }
     
     let html = "";
-    let seenTools = new Set();
-    
     snapshot.forEach((doc) => {
       const tool = doc.data();
-      if (seenTools.has(tool.name)) return;
-      seenTools.add(tool.name);
-      
       html += `
         <div class="tool-card">
           <img src="${tool.image || 'https://via.placeholder.com/150'}" alt="${tool.name || 'Tool'}">
@@ -38,7 +30,7 @@ async function loadTools() {
           <p>${tool.description || 'No description available'}</p>
           <span class="category">${tool.category || 'Uncategorized'}</span>
           <span class="rating">⭐ ${tool.rating || 'N/A'}</span>
-          <a href="${tool.website || '#'}" target="_blank" class="try-btn">Try Now</a>
+          <button class="try-btn">Try Now</button>
         </div>
       `;
     });
