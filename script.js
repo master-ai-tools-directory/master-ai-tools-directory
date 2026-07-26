@@ -7,7 +7,10 @@ const db = getFirestore(app);
 
 async function loadTools() {
   try {
+    // Test: "Tool" (بڑے T کے ساتھ)
     const snapshot = await getDocs(collection(db, "Tool"));
+    alert("✅ Documents found: " + snapshot.size);
+    
     const toolsGrid = document.getElementById("toolsGrid");
     
     if (!toolsGrid) {
