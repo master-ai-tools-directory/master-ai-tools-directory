@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Tools Directory</title>
+    <link>https://master-ai-tools-directory.github.io/master-ai-tools-directory/</link>
+    <description>Discover the best AI tools for writing, coding, images, video, and productivity.</description>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 25 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://master-ai-tools-directory.github.io/master-ai-tools-directory/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <!-- Blog 5 -->
+    <item>
+      <title>500+ Ways to Make Money with AI Tools in 2026 – Start Earning Today!</title>
+      <link>https://master-ai-tools-directory.github.io/master-ai-tools-directory/blog5.html</link>
+      <pubDate>Mon, 25 Aug 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Discover 500+ proven ways to make money with AI tools in 2026. Free guide for beginners. Start earning today!]]></description>
+    </item>
+
+    <!-- Blog 6 -->
+    <item>
+      <title>Best AI Tools for Content Writing in 2026 – The Ultimate Guide</title>
+      <link>https://master-ai-tools-directory.github.io/master-ai-tools-directory/blog6.html</link>
+      <pubDate>Mon, 25 Aug 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Discover the best AI tools for content writing in 2026. Free and paid AI writing tools for bloggers, marketers, and content creators.]]></description>
+    </item>
+
+  </channel>
+</rss>
